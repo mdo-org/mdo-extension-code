@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "extension.runMDo",
-				"title": "MDo"
+				"title": "Run MDo"
 			}
 		]
 	},
