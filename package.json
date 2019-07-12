@@ -2,6 +2,7 @@
 	"name": "mdo-extension-code",
 	"displayName": "MDo",
 	"description": "A free, open source to-do app built to live inside your editor.",
+	"publisher": "alexishevia",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.36.0"
@@ -12,7 +13,8 @@
 	"activationEvents": [
 		"onCommand:extension.runMDo"
 	],
-	"main": "./extension.js",
+	"repository": "https://github.com/mdo-org/mdo-extension-code",
+	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
@@ -22,7 +24,11 @@
 		]
 	},
 	"scripts": {
-		"test": "node ./test/runTest.js"
+		"vscode:prepublish": "webpack --mode production",
+		"compile": "webpack --mode none",
+		"watch": "webpack --mode none --watch",
+		"test": "node ./test/runTest.js",
+		"test-compile": "tsc -p ./"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -33,7 +39,9 @@
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
-		"vscode-test": "^1.0.0-next.0"
+		"vscode-test": "^1.0.0-next.0",
+		"webpack": "^4.35.3",
+		"webpack-cli": "^3.3.5"
 	},
 	"dependencies": {
 		"@mdo-org/mdo-flow-live-in-the-moment": "^0.2.11",
