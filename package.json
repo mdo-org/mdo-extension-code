@@ -45,6 +45,6 @@
 	},
 	"dependencies": {
 		"@mdo-org/mdo-flow-live-in-the-moment": "^0.2.11",
-		"luxon": "^1.17.1"
+		"luxon": "^2.5.2"
 	}
 }
